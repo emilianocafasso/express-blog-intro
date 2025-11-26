@@ -36,10 +36,13 @@ posts = [
 ]
 
 app.get('/', (req, res) => {
-    res.send(posts)
+    res.send("Server del mio blog")
 })
-
 // '/' è la rotta (endpoint), in questo caso mi indica la home del server
+
+app.get('/bacheca', (req, res) => {
+    res.json(posts)
+})
 
 app.listen(port, () => {
     console.log(`Listening on http://localhost:${port}`);
